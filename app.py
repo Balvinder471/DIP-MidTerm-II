@@ -42,9 +42,9 @@ def apply_transform(image_data):
   #img_reshap = preprocess_input(img_reshap)
    
   if kind == "Reflect-X":
-     image_data = cv.flip(image_data, 0)
+     image_data = cv2.flip(image_data, 0)
   elif kind == "Reflect-Y":
-     image_data = cv.flip(image_data, 1)
+     image_data = cv2.flip(image_data, 1)
   st.image(image_data, use_column_width=True)
   return 0
 if file is None:
