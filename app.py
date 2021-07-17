@@ -51,11 +51,13 @@ def apply_transform(image_data, value):
   yshear = np.float32([[1, value, 0],
              	[0, 1  , 0],
             	[0, 0  , 1]])
+  
+  rows, cols, dim = image_data.shape
    
   if kind == "Shear-X":
-     image_data =  cv2.warpPerspective(img, xshear , (int(cols*1.5),int(rows*1.5)))
+     image_data =  cv2.warpPerspective(image_data, xshear , (int(cols*1.5),int(rows*1.5)))
   elif kind == "Shear-Y":
-     image_data =  cv2.warpPerspective(img, yshear , (int(cols*1.5),int(rows*1.5)))
+     image_data =  cv2.warpPerspective(image_data, yshear , (int(cols*1.5),int(rows*1.5)))
   st.image(image_data, use_column_width=True)
   return 0
 
