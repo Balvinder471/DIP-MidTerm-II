@@ -53,9 +53,9 @@ def apply_transform(image_data, value):
             	[0, 0  , 1]])
    
   if kind == "Shear-X":
-     image_data =  cv.warpPerspective(img, xshear , (int(cols*1.5),int(rows*1.5)))
+     image_data =  cv2.warpPerspective(img, xshear , (int(cols*1.5),int(rows*1.5)))
   elif kind == "Shear-Y":
-     image_data =  cv.warpPerspective(img, yshear , (int(cols*1.5),int(rows*1.5)))
+     image_data =  cv2.warpPerspective(img, yshear , (int(cols*1.5),int(rows*1.5)))
   st.image(image_data, use_column_width=True)
   return 0
 
