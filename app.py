@@ -32,7 +32,7 @@ st.title("""
 file= st.file_uploader("Please upload image", type=("jpg", "png"))
 kind = st.selectbox("Shear-X: ",
                      ["Shear-X", "Shear-Y", "Translation", "Rotation", "Cropping", "Reflection"])
-value = st.text_input("Enter the amount of shear", "Type Here ...")
+value = st.text_input("Enter the amount of shear", "0.5")
 
 value = float(value)
 
@@ -58,6 +58,7 @@ def apply_transform(image_data, value):
      image_data =  cv.warpPerspective(img, yshear , (int(cols*1.5),int(rows*1.5)))
   st.image(image_data, use_column_width=True)
   return 0
+
 if file is None:
   st.text("Please upload an Image file")
 else:
